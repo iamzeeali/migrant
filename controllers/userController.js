@@ -5,7 +5,7 @@ const factory = require("./handlerFactory");
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
-  Object.keys(obj).forEach(el => {
+  Object.keys(obj).forEach((el) => {
     if (allowedFields.includes(el)) newObj[el] = obj[el];
   });
   return newObj;
@@ -28,19 +28,19 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   }
 
   // 2) Filtered out unwanted fields names that are not allowed to be updated
-  const filteredBody = filterObj(req.body, "name", "email");
+  const filteredBody = filterObj(req.body, "name", "email", "role");
 
   // 3) Update user document
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   res.status(200).json({
     status: "success",
     data: {
-      user: updatedUser
-    }
+      user: updatedUser,
+    },
   });
 });
 
@@ -49,14 +49,14 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
 
   res.status(204).json({
     status: "success",
-    data: null
+    data: null,
   });
 });
 
 exports.createUser = (req, res) => {
   res.status(500).json({
     status: "error",
-    message: "This route is not defined, Please use /signup instead"
+    message: "This route is not defined, Please use /signup instead",
   });
 };
 
