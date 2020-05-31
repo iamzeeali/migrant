@@ -1,0 +1,35 @@
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAIL = "REGISTER_FAIL";
+export const USER_LOADED = "USER_LOADED";
+export const GET_USERS = "GET_USERS";
+export const AUTH_ERROR = "AUTH_ERROR";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT = "LOGOUT";
+export const CLEAR_USER = "CLEAR_USER";
+export const USER_UPDATED = "USER_UPDATED";
+
+export const CLEAR_FILTER = "CLEAR_FILTER";
+
+export const SET_ALERT = "SET_ALERT";
+export const REMOVE_ALERT = "REMOVE_ALERT";
+
+export const GET_REQUEST = "GET_REQUEST";
+export const GET_REQUESTS = "GET_REQUESTS";
+export const ADD_REQUEST = "ADD_REQUEST";
+export const UPDATE_REQUEST = "UPDATE_REQUEST";
+export const SET_CURRENT_REQUEST = "SET_CURRENT_REQUEST";
+export const CLEAR_REQUEST = "CLEAR_REQUEST";
+export const DELETE_REQUEST = "DELETE_REQUEST";
+export const REQUEST_ERROR = "REQUEST_ERROR";
+export const FILTER_REQUEST = "FILTER_REQUEST";
+
+export const GET_RESPONSE = "GET_RESPONSE";
+export const GET_RESPONSES = "GET_RESPONSES";
+export const ADD_RESPONSE = "ADD_RESPONSE";
+export const UPDATE_RESPONSE = "UPDATE_RESPONSE";
+export const SET_CURRENT_RESPONSE = "SET_CURRENT_RESPONSE";
+export const CLEAR_RESPONSE = "CLEAR_RESPONSE";
+export const DELETE_RESPONSE = "DELETE_RESPONSE";
+export const RESPONSE_ERROR = "RESPONSE_ERROR";
+export const FILTER_RESPONSE = "FILTER_RESPONSE";
