@@ -10,6 +10,9 @@ import EditResponse from "../components/req_res/EditResponse";
 import Requests from "../components/req_res/Requests";
 import Responses from "../components/req_res/Responses";
 import ResFromReq from "../components/req_res/ResFromReq";
+import AddUser from "../components/user/AddUser";
+import User from "../components/user/User";
+import Profile from "../components/ui/Profile";
 
 const Routes = () => {
   return (
@@ -26,6 +29,9 @@ const Routes = () => {
             component={EditResponse}
           />
           <PrivateRoute exact path="/resFromReq/:id" component={ResFromReq} />
+          <PrivateRoute exact path="/addUser" component={AddUser} />
+          <PrivateRoute exact path="/users" component={User} />
+          <PrivateRoute exact path="/me" component={Profile} />
           <Route exact path="/addRequest" component={AddRequest} />
         </Switch>
       </div>

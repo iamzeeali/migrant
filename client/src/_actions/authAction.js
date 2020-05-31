@@ -121,6 +121,7 @@ export const updateMyPassword = (formData, history) => async (dispatch) => {
       payload: res.data,
     });
     dispatch(setAlert("Password Updated!", "success"));
+    history.push("/");
   } catch (err) {
     const errors = err.response.data;
     if (errors) {

@@ -15,9 +15,7 @@ const initialState = {
   role: null,
   loading: true,
   user: {},
-  company: {},
   users: [],
-  username: null,
 };
 
 export default function (state = initialState, action) {
@@ -30,14 +28,12 @@ export default function (state = initialState, action) {
         isAuthenticated: true,
         loading: false,
         user: payload.data,
-        username: payload.data.name,
-        company: payload.data.company,
-        role: payload.data.role,
+        role: payload.data.data.role,
       };
     case GET_USERS:
       return {
         ...state,
-        users: payload,
+        users: payload.data,
         loading: false,
       };
     case REGISTER_SUCCESS:
@@ -69,8 +65,6 @@ export default function (state = initialState, action) {
         isAuthenticated: false,
         loading: false,
         user: {},
-        username: null,
-        company: {},
         role: null,
       };
     default:

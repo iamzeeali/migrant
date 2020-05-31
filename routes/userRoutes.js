@@ -18,7 +18,7 @@ router.patch("/updateMe", userController.updateMe);
 router.delete("/deleteMe", userController.deleteMe);
 
 //Restrict all router after this middleware to admin only
-router.use(authController.restrictTo("admin"));
+router.use(authController.restrictTo("super-admin"));
 
 router
   .route("/")
