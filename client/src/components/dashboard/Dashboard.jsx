@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getRequests } from "../../_actions/requestAction";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Spinner from "../ui/Spinner";
 
-const Dashboard = () => {
+const Dashboard = ({ getRequests, results }) => {
   useEffect(() => {
+    getRequests();
     //eslint-diable-next-line
   }, []);
 
@@ -34,7 +35,8 @@ const Dashboard = () => {
             <Link to="/requests">
               <i class="fa fa-list fa-4x my-2" aria-hidden="true"></i>
               <br />
-              All Requests
+              All Requests{" "}
+              <span class="badge badge-primary">{results && results}</span>
             </Link>
           </div>
 
@@ -65,7 +67,9 @@ const Dashboard = () => {
   );
 };
 
-Dashboard.propTypes = {};
+Dashboard.propTypes = { getRequests: PropTypes.func.isRequired };
 
-const mapStateToProps = (state) => ({});
-export default connect(mapStateToProps, {})(Dashboard);
+const mapStateToProps = (state) => ({
+  results: state.request.results,
+});
+export default connect(mapStateToProps, { getRequests })(Dashboard);
