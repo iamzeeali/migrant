@@ -134,6 +134,24 @@ export const updateMyPassword = (formData, history) => async (dispatch) => {
   }
 };
 
+// Delete User
+export const deleteUser = (id) => async (dispatch) => {
+  if (window.confirm("Are you sure?")) {
+    try {
+      await axios.delete(`/api/user/${id}`);
+      dispatch({
+        type: types.DELETE_USER,
+        payload: id,
+      });
+    } catch (err) {
+      dispatch({
+        type: types.AUTH_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status },
+      });
+    }
+  }
+};
+
 // Logout / Clear Profile
 export const logout = () => (dispatch) => {
   if (window.confirm("Confirm Logout?")) {

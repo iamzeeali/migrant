@@ -7,6 +7,7 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   GET_USERS,
+  DELETE_USER,
 } from "../_actions/types";
 
 const initialState = {
@@ -34,6 +35,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         users: payload.data,
+        loading: false,
+      };
+    case DELETE_USER:
+      return {
+        ...state,
+        users: state.users.filter((user) => user._id !== action.payload),
         loading: false,
       };
     case REGISTER_SUCCESS:

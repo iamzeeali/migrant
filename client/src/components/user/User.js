@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
-import { getUsers } from "../../_actions/authAction";
+import { getUsers, deleteUser } from "../../_actions/authAction";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../ui/Spinner";
 import moment from "moment";
 
-const Users = ({ getUsers, users, loading }) => {
+const Users = ({ getUsers, deleteUser, users, loading }) => {
   useEffect(() => {
     getUsers();
     //eslint-diable-next-line
   }, [getUsers]);
+
+  const onDeleteHandler = (id) => {
+    deleteUser(id);
+  };
 
   return (
     <React.Fragment>
@@ -27,6 +31,7 @@ const Users = ({ getUsers, users, loading }) => {
                   <th scope="col">Full Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Role</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
 
@@ -36,6 +41,16 @@ const Users = ({ getUsers, users, loading }) => {
                     <td>{usr.name && usr.name}</td>
                     <td>{usr.email && usr.email}</td>
                     <td>{usr.role && usr.role}</td>
+                    <td>
+                      {" "}
+                      <Link
+                        title="Delete"
+                        to="#!"
+                        onClick={() => onDeleteHandler(usr._id)}
+                      >
+                        <i className="fa fa-trash text-danger pl-2"></i>
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -51,6 +66,7 @@ const Users = ({ getUsers, users, loading }) => {
 
 Users.propTypes = {
   getUsers: PropTypes.func.isRequired,
+  deleteUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -59,4 +75,5 @@ const mapStateToProps = (state) => ({
 });
 export default connect(mapStateToProps, {
   getUsers,
+  deleteUser,
 })(Users);
