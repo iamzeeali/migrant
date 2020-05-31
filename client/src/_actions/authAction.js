@@ -47,7 +47,7 @@ export const addUser = (formData, history) => async (dispatch) => {
       payload: res.data,
     });
 
-    history.push("/user");
+    history.push("/users");
   } catch (err) {
     const errors = err.response.data;
     if (errors && errors.error.code === 11000) {
