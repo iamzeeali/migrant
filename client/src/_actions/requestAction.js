@@ -37,13 +37,12 @@ export const getRequests = () => async (dispatch) => {
 
 // Add request
 export const addRequest = (formData, history) => async (dispatch) => {
-  console.log(formData);
   try {
-    const res = await axios.post("/api/request", formData);
-    dispatch({
-      type: types.ADD_REQUEST,
-      payload: res.data,
-    });
+    // const res = await axios.post("/api/request", formData);
+    // dispatch({
+    //   type: types.ADD_REQUEST,
+    //   payload: res.data,
+    // });
 
     dispatch(setAlert("Request Sent Successfully!", "success"));
   } catch (err) {

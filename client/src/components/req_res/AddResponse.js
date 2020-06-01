@@ -62,6 +62,7 @@ const AddResponse = ({ addResponse, history }) => {
                   name="repondedBy"
                   value={repondedBy}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />{" "}
               </div>
             </div>
@@ -77,6 +78,7 @@ const AddResponse = ({ addResponse, history }) => {
                   name="sourceState"
                   value={sourceState}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -92,6 +94,7 @@ const AddResponse = ({ addResponse, history }) => {
                   name="sourceCity"
                   value={sourceCity}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -119,6 +122,7 @@ const AddResponse = ({ addResponse, history }) => {
                   name="destinationState"
                   value={destinationState}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -134,6 +138,7 @@ const AddResponse = ({ addResponse, history }) => {
                   name="destinationCity"
                   value={destinationCity}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -149,6 +154,7 @@ const AddResponse = ({ addResponse, history }) => {
                   name="destinationAddress"
                   value={destinationAddress}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>

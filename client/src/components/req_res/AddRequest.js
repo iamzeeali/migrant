@@ -62,6 +62,7 @@ const AddRequest = ({ addRequest, history }) => {
                   name="requestBy"
                   value={requestBy}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />{" "}
               </div>
             </div>
@@ -77,6 +78,7 @@ const AddRequest = ({ addRequest, history }) => {
                   name="sourceState"
                   value={sourceState}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -92,6 +94,7 @@ const AddRequest = ({ addRequest, history }) => {
                   name="sourceCity"
                   value={sourceCity}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -135,6 +138,7 @@ const AddRequest = ({ addRequest, history }) => {
                   name="destinationCity"
                   value={destinationCity}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -150,6 +154,7 @@ const AddRequest = ({ addRequest, history }) => {
                   name="destinationAddress"
                   value={destinationAddress}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>

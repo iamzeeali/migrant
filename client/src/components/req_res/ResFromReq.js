@@ -108,6 +108,7 @@ const ResFromReq = ({
                   name="respondedBy"
                   value={respondedBy}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />{" "}
               </div>
             </div>
@@ -123,6 +124,7 @@ const ResFromReq = ({
                   name="sourceState"
                   value={sourceState}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -138,6 +140,7 @@ const ResFromReq = ({
                   name="sourceCity"
                   value={sourceCity}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -165,6 +168,7 @@ const ResFromReq = ({
                   name="destinationState"
                   value={destinationState}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -180,6 +184,7 @@ const ResFromReq = ({
                   name="destinationCity"
                   value={destinationCity}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
@@ -195,6 +200,7 @@ const ResFromReq = ({
                   name="destinationAddress"
                   value={destinationAddress}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
