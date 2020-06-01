@@ -11,9 +11,11 @@ const responseSchema = new mongoose.Schema({
   },
   respondedBy: {
     type: String,
+    required: true,
   },
   sourceState: {
     type: String,
+    required: true,
   },
   sourceCity: {
     type: String,

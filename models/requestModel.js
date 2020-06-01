@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const requestSchema = new mongoose.Schema({
   requestBy: {
     type: String,
+    required: true,
   },
   sourceState: {
     type: String,
