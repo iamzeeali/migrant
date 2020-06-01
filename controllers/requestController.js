@@ -2,7 +2,32 @@ const Request = require("../models/requestModel");
 const factory = require("./handlerFactory");
 const catchAsync = require("../utils/catchAsync");
 
-exports.getAllRequests = factory.getAll(Request);
+// exports.getAllRequests = factory.getAll(Request);
+
+exports.getAllRequests = catchAsync(async (req, res, next) => {
+  const docs = await Request.find({
+    responded: false,
+  });
+  res.status(200).json({
+    status: "success",
+    result: docs.length,
+    data: {
+      data: docs,
+    },
+  });
+});
+
+exports.AllRequests = catchAsync(async (req, res, next) => {
+  const docs = await Request.find();
+  res.status(200).json({
+    status: "success",
+    result: docs.length,
+    data: {
+      data: docs,
+    },
+  });
+});
+
 exports.getRequest = factory.getOne(Request);
 exports.updateRequest = factory.updateOne(Request);
 exports.deleteRequest = factory.deleteOne(Request);

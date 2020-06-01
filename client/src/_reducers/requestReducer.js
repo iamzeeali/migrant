@@ -3,6 +3,7 @@ import * as types from "../_actions/types";
 const initialState = {
   request: null,
   requests: [],
+  all: [],
   results: null,
   error: {},
   filtered: null,
@@ -23,6 +24,13 @@ export default function (state = initialState, action) {
       return {
         ...state,
         requests: payload.data.data,
+        results: payload.data.data.length,
+        loading: false,
+      };
+    case types.ALL_REQUESTS:
+      return {
+        ...state,
+        all: payload.data.data,
         results: payload.data.data.length,
         loading: false,
       };

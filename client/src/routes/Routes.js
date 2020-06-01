@@ -8,6 +8,7 @@ import AddRequest from "../components/req_res/AddRequest";
 import AddResponse from "../components/req_res/AddResponse";
 import EditResponse from "../components/req_res/EditResponse";
 import Requests from "../components/req_res/Requests";
+import ArchiveRequests from "../components/req_res/ArchiveRequests";
 import Responses from "../components/req_res/Responses";
 import ResFromReq from "../components/req_res/ResFromReq";
 import AddUser from "../components/user/AddUser";
@@ -21,6 +22,7 @@ const Routes = () => {
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/requests" component={Requests} />
+          <PrivateRoute exact path="/archiveReq" component={ArchiveRequests} />
           <PrivateRoute exact path="/responses" component={Responses} />
           <PrivateRoute exact path="/addResponse" component={AddResponse} />
           <PrivateRoute

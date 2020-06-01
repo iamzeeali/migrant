@@ -9,11 +9,18 @@ const Landing = ({ isAuthenticated }) => {
   }
   return (
     <React.Fragment>
-      <div className="landig d-flex align-items-center min-vh-100 text-center">
+      <div className="landig d-flex align-items-center min-vh-90 text-center py-5">
         <div className="container">
+          <img
+            src="https://imagevars.gulfnews.com/2020/05/12/Sonu-Sood_172091f01e3_medium.jpg"
+            alt="sonu_sood"
+            width="80%"
+            className="border border-primary p-2 mb-4"
+          />
           <p className="lead">
             An initiative to help migrant workers reach home safely to their
-            loved ones.
+            loved ones, inspired by the work of bollywood actor{" "}
+            <span className="text-primary">Sonu Sood</span>
           </p>
           <p>
             You can request an arrangement for yourself or on behalf of people

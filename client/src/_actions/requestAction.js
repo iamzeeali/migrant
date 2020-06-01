@@ -35,6 +35,22 @@ export const getRequests = () => async (dispatch) => {
   }
 };
 
+//All requests
+export const allRequests = () => async (dispatch) => {
+  try {
+    const res = await axios.get("/api/request/all");
+    dispatch({
+      type: types.ALL_REQUESTS,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: types.REQUEST_ERROR,
+      payload: { status: err.response },
+    });
+  }
+};
+
 // Add request
 export const addRequest = (formData, history) => async (dispatch) => {
   try {
@@ -45,6 +61,7 @@ export const addRequest = (formData, history) => async (dispatch) => {
     });
 
     dispatch(setAlert("Request Sent Successfully!", "success"));
+    window.location.reload();
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -112,7 +129,7 @@ export const updateResponded = (responded, id) => async (dispatch) => {
       payload: res.data,
     });
 
-    dispatch(setAlert("Request Updated", "success"));
+    // dispatch(setAlert("Migrant sent successfully", "success"));
   } catch (err) {
     const errors = err.response.data.errors;
 

@@ -54,9 +54,9 @@ const requestSchema = new mongoose.Schema({
   },
 });
 
-requestSchema.pre(/^find/, function (next) {
-  this.find({ responded: { $ne: true } });
-  next();
-});
+// requestSchema.pre(/^find/, function (next) {
+//   this.find({ responded: { $ne: true } });
+//   next();
+// });
 
 module.exports = Request = mongoose.model("Request", requestSchema);

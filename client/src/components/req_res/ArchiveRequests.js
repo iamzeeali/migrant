@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {
-  getRequests,
+  allRequests,
   deleteRequest,
   setCurrentRequest,
 } from "../../_actions/requestAction";
@@ -11,15 +11,15 @@ import Spinner from "../ui/Spinner";
 import moment from "moment";
 import ReactToExcel from "react-html-table-to-excel";
 
-const Requests = ({
-  getRequests,
+const ArchiveRequests = ({
+  allRequests,
   deleteRequest,
   setCurrentRequest,
-  requests,
+  all,
   loading,
 }) => {
   useEffect(() => {
-    getRequests();
+    allRequests();
     //eslint-diable-next-line
   }, []);
 
@@ -31,7 +31,7 @@ const Requests = ({
     <React.Fragment>
       <div className="requests my-5">
         <div className="">
-          <p className="lead text-center">All Requests</p>
+          <p className="lead text-center">Archived Requests</p>
           <ReactToExcel
             className=" btn btn-primary "
             table="request-table" // id of table which you want to export
@@ -39,7 +39,7 @@ const Requests = ({
             sheet="sheet"
             buttonText="Export Table" // button name
           />
-          {requests !== null && !loading ? (
+          {all !== null && !loading ? (
             <table
               class="table table-hover table-bordered table-responsive my-5"
               id="request-table"
@@ -66,23 +66,21 @@ const Requests = ({
               </thead>
 
               <tbody>
-                {requests.map((req) => (
+                {all.map((req) => (
                   <tr key={req._id} className="text-center">
                     <td>
                       <Link
                         to={`/resFromReq/${req._id}`}
                         onClick={() => setCurrentRequest(req)}
-                        className="btn btn-primary"
                       >
-                        Send
+                        <i className="fa fa-plus-circle pr-2"></i>
                       </Link>
-                      <br />
                       <Link
                         title="Delete"
                         to="#!"
                         onClick={() => onDeleteHandler(req._id)}
                       >
-                        <i className="fa fa-trash text-danger fa-lg mt-4"></i>
+                        <i className="fa fa-trash text-danger pl-2"></i>
                       </Link>
                     </td>
                     <td>{moment(req.createdAt).format("DD-MM-YYYY")}</td>
@@ -126,19 +124,19 @@ const Requests = ({
   );
 };
 
-Requests.propTypes = {
-  getRequests: PropTypes.func.isRequired,
+ArchiveRequests.propTypes = {
+  allRequests: PropTypes.func.isRequired,
   deleteRequest: PropTypes.func.isRequired,
   setCurrentRequest: PropTypes.func.isRequired,
   requests: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  requests: state.request.requests,
+  all: state.request.all,
   loading: state.request.loading,
 });
 export default connect(mapStateToProps, {
-  getRequests,
+  allRequests,
   deleteRequest,
   setCurrentRequest,
-})(Requests);
+})(ArchiveRequests);

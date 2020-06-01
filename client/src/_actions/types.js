@@ -17,6 +17,7 @@ export const REMOVE_ALERT = "REMOVE_ALERT";
 
 export const GET_REQUEST = "GET_REQUEST";
 export const GET_REQUESTS = "GET_REQUESTS";
+export const ALL_REQUESTS = "ALL_REQUESTS";
 export const ADD_REQUEST = "ADD_REQUEST";
 export const UPDATE_REQUEST = "UPDATE_REQUEST";
 export const SET_CURRENT_REQUEST = "SET_CURRENT_REQUEST";

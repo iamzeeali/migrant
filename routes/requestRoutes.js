@@ -1,6 +1,5 @@
 const express = require("express");
 const requestController = require("./../controllers/requestController");
-const authController = require("./../controllers/authController");
 
 const router = express.Router();
 
@@ -9,6 +8,7 @@ router
   .get(requestController.getAllRequests)
   .post(requestController.createRequest);
 
+router.route("/all").get(requestController.AllRequests);
 router
   .route("/:id")
   .get(requestController.getRequest)

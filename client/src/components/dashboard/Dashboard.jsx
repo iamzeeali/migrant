@@ -14,24 +14,7 @@ const Dashboard = ({ getRequests, results }) => {
     <React.Fragment>
       <div className="container my-5">
         <div className="row text-center">
-          <div className="col">
-            <img
-              src="https://celebritytadka.com/wp-content/uploads/2020/05/sonu-sood.jpg"
-              alt=""
-              width="100%"
-            />
-          </div>
-          <div className="col">
-            <img
-              src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202003/RTS375B8.jpeg?WiXTYOD_ceRFha5EUgrE4vuPQgy3Ewiw"
-              alt=""
-              width="100%"
-            />
-          </div>
-        </div>
-
-        <div className="row text-center">
-          <div className="col-sm-4 my-5">
+          <div className="col-sm-4 my-5 border border-secondary py-2 ">
             <Link to="/requests">
               <i class="fa fa-list fa-4x my-2" aria-hidden="true"></i>
               <br />
@@ -40,7 +23,7 @@ const Dashboard = ({ getRequests, results }) => {
             </Link>
           </div>
 
-          <div className="col-sm-4 my-5">
+          <div className="col-sm-4 my-5 border border-secondary py-2 ">
             <Link to="/addResponse">
               <i class="fa fa-plus-square fa-4x my-2" aria-hidden="true"></i>
               <br />
@@ -48,7 +31,7 @@ const Dashboard = ({ getRequests, results }) => {
             </Link>
           </div>
 
-          <div className="col-sm-4 my-5">
+          <div className="col-sm-4 my-5 border border-secondary py-2 ">
             <Link to="/responses">
               <i class="fa fa-list fa-4x my-2" aria-hidden="true"></i>
               <br />
@@ -58,10 +41,19 @@ const Dashboard = ({ getRequests, results }) => {
         </div>
       </div>
 
-      <div className="footer text-center">
+      <Link
+        className="my-1 text-right border border-primary p-2"
+        to="/archiveReq"
+      >
+        {" "}
         <small>
-          App developed by <a href="http://www.globuslabs.com">Globus Labs</a>
+          <i class="fa fa-list" aria-hidden="true"></i> Archived Requests
         </small>
+      </Link>
+      <div className="footer text-center">
+        <p>
+          App developed by <a href="http://www.globuslabs.com">Globus Labs</a>
+        </p>
       </div>
     </React.Fragment>
   );

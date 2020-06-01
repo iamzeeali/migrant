@@ -44,7 +44,7 @@ export const addResponse = (formData, history) => async (dispatch) => {
       payload: res.data,
     });
 
-    dispatch(setAlert("Response added Successfully!", "success"));
+    dispatch(setAlert("Migrant sent successfully!", "success"));
     history.push("/responses");
   } catch (err) {
     const errors = err.response.data.errors;
@@ -76,7 +76,7 @@ export const editResponse = (formData, history, id) => async (dispatch) => {
       payload: res.data,
     });
 
-    dispatch(setAlert("Response Updated", "success"));
+    dispatch(setAlert("Migrant departure updated", "success"));
 
     history.push("/responses");
   } catch (err) {

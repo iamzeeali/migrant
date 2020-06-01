@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../ui/Spinner";
 import moment from "moment";
+import ReactToExcel from "react-html-table-to-excel";
 
 const Responses = ({
   getResponses,
@@ -30,12 +31,23 @@ const Responses = ({
     <React.Fragment>
       <div className="responses my-5">
         <div className="">
-          <p className="lead text-center">All Responses</p>
+          <p className="lead text-center">List of sent migrants (departures)</p>
+          <ReactToExcel
+            className=" btn btn-primary "
+            table="response-table" // id of table which you want to export
+            filename={`departure-${Date.now()}`} // name of the file
+            sheet="sheet"
+            buttonText="Export Table" // button name
+          />
           {responses !== null && !loading ? (
-            <table class="table table-hover table-bordered table-responsive my-5">
+            <table
+              class="table table-hover table-bordered table-responsive my-5"
+              id="response-table"
+            >
               <thead class="table-primary">
                 <tr>
                   <th scope="col">Action</th>
+                  <th scope="col">Added on</th>
                   <th scope="col">Response By</th>
                   <th scope="col">Source State</th>
                   <th scope="col">Source City</th>
@@ -70,7 +82,7 @@ const Responses = ({
                         <i className="fa fa-trash text-danger pl-2"></i>
                       </Link>
                     </td>
-
+                    <td>{moment(res.createdAt).format("DD-MM-YYYY")}</td>
                     <td>{res.respondedBy && res.respondedBy}</td>
                     <td>{res.sourceState && res.sourceState}</td>
                     <td>{res.sourceCity && res.sourceCity}</td>
