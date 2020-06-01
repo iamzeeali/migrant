@@ -54,9 +54,14 @@ const Navbar = (
   );
 
   const guestLinks = (
-    <Link className="text-light btn btn-primary ml-auto" to="/login">
-      Login
-    </Link>
+    <React.Fragment>
+      <Link className="text-light mr-3" to="/">
+        Home
+      </Link>
+      <Link className="text-light btn btn-primary ml-auto" to="/login">
+        Login
+      </Link>
+    </React.Fragment>
   );
 
   return (
