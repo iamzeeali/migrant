@@ -51,7 +51,7 @@ const AddResponse = ({ addResponse, history }) => {
     <React.Fragment>
       <div className="add-request my-5">
         <div className="container mx-auto">
-          <h1 className="lead text-center col-sm-6">Add a Response</h1>
+          <h1 className="lead text-center col-sm-6">Sending Migrants...</h1>
           <form className="my-5" onSubmit={(e) => onSubmitHandler(e)}>
             <div className="form-group row">
               <label className="col-sm-2 col-form-label">Response By</label>

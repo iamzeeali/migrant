@@ -44,7 +44,7 @@ const Dashboard = ({ getRequests, results }) => {
             <Link to="/addResponse">
               <i class="fa fa-plus-square fa-4x my-2" aria-hidden="true"></i>
               <br />
-              Add a Response
+              Add a Departure
             </Link>
           </div>
 
@@ -52,7 +52,7 @@ const Dashboard = ({ getRequests, results }) => {
             <Link to="/responses">
               <i class="fa fa-list fa-4x my-2" aria-hidden="true"></i>
               <br />
-              All Responses
+              Sent Migrants
             </Link>
           </div>
         </div>
