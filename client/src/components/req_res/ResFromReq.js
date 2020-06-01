@@ -76,10 +76,7 @@ const ResFromReq = ({
       travelMedium:
         loading || !request.travelMedium ? "" : request.travelMedium,
       vehicleNo: loading || !request.vehicleNo ? "" : request.vehicleNo,
-      travelDate:
-        loading || !request.travelDate
-          ? ""
-          : moment(request.travelDate).format("DD-MM-YYYY"),
+      travelDate: loading || !request.travelDate ? "" : travelDate,
       aadharNo: loading || !request.aadharNo ? "" : request.aadharNo,
       description: loading || !request.description ? "" : request.description,
     });

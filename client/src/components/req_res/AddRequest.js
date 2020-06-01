@@ -119,6 +119,7 @@ const AddRequest = ({ addRequest, history }) => {
                   name="destinationState"
                   value={destinationState}
                   onChange={(e) => onChangeHandler(e)}
+                  required
                 />
               </div>
             </div>
